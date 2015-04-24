@@ -1,0 +1,22 @@
+<link href="../css/movieDetail.css" rel="stylesheet" >
+<div class="container">
+	<h2>Movie Review</h2>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th class="stays">Critic</th>
+				<th class="stays">Date</th>
+				<th class="goes">Publication</th>
+				<th class="stays">Review</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="r in movie.reviews">
+				<td class="stays">{{r.critic}}</td>
+				<td class="stays">{{r.date}}</td>
+				<td class="goes">{{r.publication}}</td>
+				<td class="stays">{{r.quote}} <a id="review-a" href="{{r.links.review}}">Read full review</a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

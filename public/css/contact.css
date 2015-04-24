@@ -1,0 +1,192 @@
+@CHARSET "UTF-8";
+
+body {
+	margin: 0px;
+	padding: 0px;
+	color: #fff;
+	height: 700px;
+}
+
+.logo-img {
+	margin-left: -10px;
+	vertical-align: middle;
+	width: 50px;
+	height: 50px;
+}
+
+#nav-container {
+	margin: 0px;
+}
+
+.navbar-toggle:focus {
+	outline: 0;
+}
+
+.nav>li>a {
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 18px;
+	line-height: 60px;
+	font-family: "calibri", sans-serif;
+}
+
+.navbar-nav>li>a {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	line-height: 20px;
+}
+
+.nav>li>a {
+	position: relative;
+	display: block;
+	padding: 10px 15px;
+}
+
+a:link, a:hover, a:focus, a:visited {
+	text-decoration: none;
+	color: #fff;
+}
+
+a {
+	background: transparent;
+}
+
+p {
+	padding: 40px 0 20px;
+	font-size: 18px;
+	width: 80%;
+	line-height: 32px;
+	font-family: "calibri", sans-serif;
+	color: black;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+	color: #ffffff;
+	margin-top: 5px;
+	font-size: medium;
+	width: auto;
+}
+
+.navbar-toggle .icon-bar {
+	background: #fff;
+	height: 3px;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus
+	{
+	background: none;
+	color: #32b847;
+}
+
+h1, h2, h3, h4 {
+	font-family: "calibri", sans-serif;
+	font-weight: "700";
+}
+
+h2 {
+	font-size: 60px;
+	color: #32b847;
+	margin-top: 75px;
+	margin-bottom: 20px;
+}
+
+.checkbox {
+	margin-left: 20px;
+}
+
+label {
+	color: black;
+}
+
+.right {
+	color: black;
+	font-size: 12px;
+	margin-left: 40px;
+	text-align: center;
+}
+
+section.map-image {
+	padding: 0;
+	height: 700px;
+	background: url(../../res/map.png) no-repeat center;
+}
+
+.nav a:focus {
+	border: none;
+	outline: none;
+}
+
+#contact-links {
+	color: #32b847;
+}
+
+@media ( min-width : 1200px) .container {
+	width
+	:
+	1170px;
+	
+
+}
+
+@media ( min-width : 992px) .container {
+	width
+	:
+	970px;
+	
+
+}
+
+@media ( min-width : 768px) .container {
+	width
+	:
+	750px;
+	
+
+}
+
+@media screen and ( max-width : 992px) {
+	h1 {
+		line-height: 55px;
+		font-size: 80px;
+		padding-top: 60px;
+		margin-left: 15px;
+	}
+	.navbar-collapse {
+		box-shadow: none;
+	}
+	.map-image {
+		padding: auto;
+	}
+}
+
+@media screen and (max-width : 768px) {
+	.nav>li>a {
+		border-bottom: 1px solid #f1f4f7;
+		line-height: 20px;
+	}
+	.logo-img {
+		margin-left: 0px;
+		width: 45px;
+		height: 45px;
+	}
+	.navbar-toggle {
+		margin-right: 5px;
+	}
+	.collapse navbar-collapse {
+		border-left-width: -10px;
+	}
+	.map-image {
+		padding: auto;
+	}
+}

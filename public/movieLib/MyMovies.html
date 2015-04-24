@@ -1,0 +1,67 @@
+<link href="../css/movieDisplay.css" rel="stylesheet">
+<div class="container">
+	<h2>My Movies</h2>
+	<br>
+	
+	<div>
+		<p>
+		   So lets add some movies to watchlist {{currentUser.firstname}}...Search and add movies you would like to watch sometime.
+		   Create a list of movies to watch by clicking on the search result...so let's get rollin.
+		</p>
+	</div>
+	    
+	    <h3>Search Movie</h3>
+        <div class="input-group">
+            <input type="text" id="movie-bar" class="form-control" placeholder="Search Movie..." ng-model="searchByTitle">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" ng-click="searchMovies()">Go!</button>
+            </span>
+        </div>
+
+	<table class="table table-striped">
+	 <thead ng-show="searchRes.movies">
+			<tr>
+				<th class="stays">Title</th>
+				<th class="stays">Poster</th>
+				<th class="stays">Critics Score</th>
+				<th class="goes">Run Time</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="s in searchRes.movies" ng-click="addToFav(s)">
+				<td class="stays" id="mov-title">{{s.title}}</td>
+				<td class="stays"><img class="poster"
+					ng-src="{{s.posters.profile}}" width="50" /></td>
+				<td class="stays">{{s.ratings.critics_score}}</td>
+				<td class="goes">{{s.runtime}}</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	    <h3>My Current To Watch List</h3>
+        <table class="table table-stripped">
+		<thead ng-show="fav">
+			<tr>
+				<th class="stays">Title</th>
+				<th class="goes">Poster</th>
+				<th class="stays">Critics Score</th>
+				<th class="goes">Run Time</th>
+				<th class="stays">Remove from List</th>
+			</tr>
+		</thead>
+		<tbody id="fav-bod">
+                <tr ng-repeat="m in favMovies">
+                    <td class="stays" id="mov-title">{{m.favMovies.title}}</td>
+                    <td class="goes"><img class="poster"
+					ng-src="{{m.favMovies.posters.profile}}" width="50" /></td>
+					<td class="stays">{{m.favMovies.ratings.critics_score}}</td>
+                    <td class="goes">{{m.favMovies.runtime}}</td>
+                    <td class="stays">
+                      <button ng-click="removeFavMovie(m)" class="btn btn-danger">
+                      <span class="glyphicon glyphicon-remove"></span>
+                      </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</div>

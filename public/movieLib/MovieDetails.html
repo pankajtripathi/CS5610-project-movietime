@@ -1,0 +1,75 @@
+﻿<link href="../css/movieDetail.css" rel="stylesheet" >
+<div class="container">
+<h2>MovieDetails</h2>
+<table class="table table-striped">
+    <tbody>
+			<tr>
+				<td><img ng-src="{{movie.posters.thumbnail | changeUrl:'/movie/'}}" class="poster" /></td>
+			</tr>
+			<tr>
+			    <th>Title</th>
+				<td>{{movie.title}}</td>
+			</tr>
+			<tr>
+			    <th>Year</th>
+				<td>{{movie.year}}</td>
+			</tr>
+			<tr>
+			    <th>Genres</th>
+				<td><div ng-repeat="g in movie.genres" >{{g}}</div></td>
+			</tr>
+			<tr>
+			    <th>MPAA Rating</th>
+				<td>{{movie.mpaa_rating}}</td>
+			</tr>
+			<tr>
+			    <th>Critics Score</th>
+				<td>{{movie.ratings.critics_score}}</td>
+			</tr>
+			<tr>
+			    <th>Audience Score</th>
+				<td>{{movie.ratings.audience_score}}</td>
+			</tr>
+			<tr>
+			    <th>Release Date</th>
+				<td>{{movie.release_dates.theater}}</td>
+			</tr>
+			<tr>
+			    <th>Runtime</th>
+				<td>{{movie.runtime}}</td>
+			</tr>
+			<tr>
+			    <th>Cast</th>
+			    <td><div ng-repeat="c in movie.abridged_cast" >{{c.name}} as <i id="charac">{{c.characters[0]}}</i></div></td>	
+			</tr>
+			<tr>
+			    <th>Director</th>
+				<td><div ng-repeat="d in movie.abridged_directors" >{{d.name}}</div></td>
+			</tr>
+			<tr>
+			    <th>Studio</th>
+				<td>{{movie.studio}}</td>
+			</tr>
+			<tr>
+			    <th>Synopsis</th>
+				<td>{{movie.synopsis}}</td>
+			</tr>
+    </tbody>
+</table>
+
+<div class="row">
+    		<div id="review-button" class="col-3">
+			  <button ng-click="movieReview(movie)" class="btn btn-primary">
+			  MOVIE REVIEWS
+			  </button>
+			 </div>
+			 
+			  <div id="review-button" class="col-4">
+			  <button ng-click="addToFav(movie)" ng-show="watchbtn" class="btn btn-primary">
+			  ADD TO WATCHLIST
+			  </button>
+			 </div>
+</div>
+		 
+</div>
+

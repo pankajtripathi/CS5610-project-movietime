@@ -1,0 +1,28 @@
+<link href="../css/movieDisplay.css" rel="stylesheet">
+<div class="container">
+	<h2>Opening Movies</h2>
+	<table class="table table-hover table-striped">
+		<thead>
+			<tr>
+				<th class="stays">Title</th>
+				<th class="stays">Poster</th>
+				<th class="stays">Critics Score</th>
+				<th class="goes">Audience Score</th>
+				<th class="stays">Run Time</th>
+				<th class="goes">Release Date</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="m in movies" ng-click=movieDetails(m)>
+				<td class="stays" id="mov-title">{{m.title}}</td>
+				<td class="stays" ><img class="poster" ng-src="{{m.posters.profile}}"
+					width="50" /></td>
+				<td class="stays">{{m.ratings.critics_score}}</td>
+				<td class="goes">{{m.ratings.audience_score}}</td>
+				<td class="stays">{{m.runtime}}</td>
+				<td class="goes">{{m.release_dates.theater}}</td>
+			</tr>
+		</tbody>
+	</table>
+	</table>
+</div>

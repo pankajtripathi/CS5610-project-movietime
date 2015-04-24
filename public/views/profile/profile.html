@@ -1,0 +1,97 @@
+<link href="../css/movieDetail.css" rel="stylesheet" >
+<div class="container">
+<h2>My Profile</h2>
+<br><br>
+
+<div>
+<h3>Profile Details</h3>
+<hr>
+</div>
+
+	<div class="row">
+
+		<div class="col-1">
+			<b>First Name:</b>
+		</div>
+		<div class="col-2" ng-hide="edit">{{currentUser.firstname}}</div>
+        <div class="col-2" ng-show="edit">
+        <input type="text" ng-model="currentUser.firstname">
+        </div>
+        
+        <div class="col-1">
+			<b>Last Name:</b>
+		</div>
+		<div class="col-2" ng-hide="edit">{{currentUser.lastname}}</div>
+		<div class="col-2" ng-show="edit">
+        <input type="text" ng-model="currentUser.lastname">
+        </div>
+		
+		<div class="col-1">
+			<b>Username:</b>
+		</div>
+		<div class="col-2" ng-model="currentUser.username">{{currentUser.username}}</div>
+		
+		<div class="col-1">
+			<b>Password:</b>
+		</div>
+		<div class="col-2" ng-hide="edit">************</div>
+		<div class="col-2" ng-show="edit">
+        <input type="password" ng-model="currentUser.password">
+        </div>
+		
+		<div class="col-1">
+			<b>Email Id:</b>
+		</div>
+		<div class="col-2" ng-hide="edit">{{currentUser.email}}</div>
+		<div class="col-2" ng-show="edit">
+        <input type="email" ng-model="currentUser.email">
+        </div>
+	</div>
+
+    <br><br>
+    
+	<div class="row">
+	
+		<div id="review-button" class="col-3">
+			<button class="btn btn-primary" ng-click="editDetails()" ng-show="editbtn">EDIT DETAILS</button>
+		</div>
+		
+		<div id="review-button" class="col-3">
+			<button class="btn btn-primary" ng-click="cancelUpdate()" ng-hide="editbtn">CANCEL UPDATE</button>
+		</div>
+
+		<div id="review-button" class="col-4">
+			<button class="btn btn-primary" ng-click="saveDetails(currentUser)">SAVE DETAILS</button>
+		</div>
+
+	</div>
+	    
+	    <br><br>
+		<h3 ng-show="fav">My Current To Watch List</h3>
+        <table class="table table-stripped">
+		<thead ng-show="fav">
+			<tr>
+				<th class="stays">Title</th>
+				<th class="goes">Poster</th>
+				<th class="stays">Critics Score</th>
+				<th class="goes">Run Time</th>
+				<th class="stays">Remove from List</th>
+			</tr>
+		</thead>
+		<tbody id="fav-bod">
+                <tr ng-repeat="m in favMovies">
+                    <td class="stays" id="mov-title">{{m.favMovies.title}}</td>
+                    <td class="goes"><img class="fav-poster"
+					ng-src="{{m.favMovies.posters.profile}}" width="50" /></td>
+					<td class="stays">{{m.favMovies.ratings.critics_score}}</td>
+                    <td class="goes">{{m.favMovies.runtime}}</td>
+                    <td class="stays">
+                      <button ng-click="removeFavMovie(m)" class="btn btn-danger">
+                      <span class="glyphicon glyphicon-remove"></span>
+                      </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+	
+</div>

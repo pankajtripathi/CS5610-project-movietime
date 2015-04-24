@@ -1,0 +1,65 @@
+@CHARSET "UTF-8";
+
+th {
+	color: black;
+}
+
+tr {
+	color: black;
+	font-size: 16px;
+}
+
+table {
+	cursor: default;
+}
+.poster{
+	width:200px;
+	height:300px;
+	float:left;
+}
+
+.fav-poster{
+	width: 70px;
+	height: 110px;
+	float:left;
+}
+#review-a{
+	color:blue;
+}
+#cast-data{
+	width: 0%;
+}
+@media(max-width:570px) {
+    .goes{
+      display: none;
+    }
+}
+
+h3,h4{
+	color:#32b847;
+}
+
+.row{
+	width: 800px;
+	color:black;
+}
+.col-1,.col-2{
+	float:left;
+	margin-left:18px;
+	width: 300px;
+	font-size: 15px;
+}
+
+.col-3,.col-4{
+	float:left;
+	margin-left:18px;
+	font-size: 15px;
+}
+
+.col-3{
+	width: 130px;
+}
+
+.col-4{
+	width: 180px;
+}
