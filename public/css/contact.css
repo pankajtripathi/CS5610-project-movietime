@@ -54,7 +54,6 @@ a {
 p {
 	padding: 40px 0 20px;
 	font-size: 18px;
-	width: 80%;
 	line-height: 32px;
 	font-family: "calibri", sans-serif;
 	color: black;
@@ -112,8 +111,6 @@ label {
 .right {
 	color: black;
 	font-size: 12px;
-	margin-left: 40px;
-	text-align: center;
 }
 
 section.map-image {
@@ -132,27 +129,15 @@ section.map-image {
 }
 
 @media ( min-width : 1200px) .container {
-	width
-	:
-	1170px;
-	
-
+	width:1170px;
 }
 
 @media ( min-width : 992px) .container {
-	width
-	:
-	970px;
-	
-
+	width:970px;
 }
 
 @media ( min-width : 768px) .container {
-	width
-	:
-	750px;
-	
-
+	width:750px;
 }
 
 @media screen and ( max-width : 992px) {

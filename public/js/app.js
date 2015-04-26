@@ -31,6 +31,7 @@ app.config(function($routeProvider, $httpProvider) {
      })
     .when('/MovieReviews', {
             templateUrl: 'movieLib/MovieReviews.html',
+            controller: 'ReviewCtrl'
      })
     .when('/contact', {
 		templateUrl: 'views/contact/contact.html'
@@ -260,10 +261,22 @@ app.controller("MovieDetailCtrl",
 
 		function ($scope, $http,$location,$rootScope) {
 	//Use $http.get(url) for JSON and $http.jsonp(url) for jsonp 
-
+	
+	var user = $scope.currentUser; 
+	console.log($rootScope.movie.id);
+	
+	if(user != null){
+		$http.get("/addComment/"+$rootScope.movie.id)
+		.success(function (response) {
+			console.log(response);
+			$rootScope.comments = response;	
+		});
+	}
+	
 	$scope.movieReview = function (movie) {
 		$http.jsonp("http://api.rottentomatoes.com/api/public/v1.0/movies/"+ movie.id+ "/reviews.json?review_type=top_critic&page_limit=20&page=1&country=us&apikey=g7rx7yxzn99upr85jtnetmva&callback=JSON_CALLBACK")
 		.success(function (response) {
+			$rootScope.mid=movie.id;
 			$rootScope.movie = response;
 			console.log(response);
 			$location.url("/MovieReviews");
@@ -337,7 +350,24 @@ app.controller("profileCtrl",
 	       
 });
 
+app.controller("ReviewCtrl",
 
+		function ($scope, $http,$location,$rootScope) {
+       
+	    $scope.comm = $rootScope.currentUser;
+        $scope.addComment = function(com){
+        	var user = $rootScope.currentUser.username;  
+        	var data = {
+        		username : user,
+        		movid : $rootScope.mid, 
+        		comment : com,
+        	}
+            $http.post("/addComment", data)
+            .success(function (response) {
+            $rootScope.comments = response; 
+            console.log(response);
+            });
+ 
+        }
 
-
-
+});

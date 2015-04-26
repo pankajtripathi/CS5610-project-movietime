@@ -24,7 +24,15 @@ var MovSchema = new mongoose.Schema({
 	favMovies: Object
 });
 
+var ComSchema = new mongoose.Schema({
+	username: String,
+	movid: String,
+	comment: String
+});
+
 var MovModel = mongoose.model('MovModel',MovSchema);
+
+var ComModel = mongoose.model('ComModel',ComSchema);
 
 var UserModel = mongoose.model('UserModel', UserSchema);
 
@@ -135,6 +143,25 @@ app.delete('/favMovies/:user/:movid',function(req, res){
     	res.json(data);
     });
 	});
+});
+
+app.post('/addComment',function(req, res){
+	
+	var com = new ComModel(req.body);
+	com.save(function (err, doc) {
+	console.log(com);
+    ComModel.find(function (err, data) {
+    	res.json(data);
+    });
+	});
+});
+
+app.get('/addComment/:mid', function (req, res) {
+	var mid = req.params.mid;
+	console.log(mid);
+    ComModel.find({movid: mid},function (err, data) {
+    res.json(data);
+    });
 });
 
 

@@ -19,4 +19,29 @@
 			</tr>
 		</tbody>
 	</table>
+	
+	<br><br>
+	<h3 ng-show="comm">Comments</h3>
+	<table class="table" ng-show="comments">
+		<tbody>
+			<tr ng-repeat="c in comments">
+			<td>{{c.comment}} - {{c.username}}</td>
+			<td>
+			<button  ng-show="del" ng-click="removeComment(c)" class="btn btn-danger">
+                      <span class="glyphicon glyphicon-remove"></span>
+            </button>
+			</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="row">
+	<div class=col-5>
+	<textarea id="ta" ng-show="comm" ng-model="comment"></textarea>
+	</div>
+	<div class="col-3">
+	<button class="btn btn-primary" onclick="cleararea()" ng-show="comm" ng-click="addComment(comment)">ADD COMMENT</button>
+	</div>
+	
+	</div>
 </div>

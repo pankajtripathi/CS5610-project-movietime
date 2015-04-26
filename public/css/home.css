@@ -68,9 +68,12 @@ body {
 }
 
 .right {
-    margin: 35px 0;
+    text-align: center;
 }
 
+.right-row{
+	width: 350px;
+}
 .wrapper{
 	text-align: center;	
 }

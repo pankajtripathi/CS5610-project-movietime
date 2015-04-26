@@ -40,14 +40,21 @@ h3,h4{
 }
 
 .row{
-	width: 800px;
+	width: 350px;
 	color:black;
 }
 .col-1,.col-2{
 	float:left;
 	margin-left:18px;
-	width: 300px;
 	font-size: 15px;
+}
+
+.col-1{
+	width: 100px;
+}
+
+.col-2{
+	width: 200px;
 }
 
 .col-3,.col-4{
@@ -63,3 +70,17 @@ h3,h4{
 .col-4{
 	width: 180px;
 }
+
+#ta, .col-5{
+  width: 600px;
+  height: 100px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+@media(max-width:750px) {
+	#ta, .col-5{
+	  width:350px;
+	}
+}
+

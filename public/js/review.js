@@ -1,0 +1,4 @@
+function cleararea()
+{
+	$("#ta").val("");
+}
