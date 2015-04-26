@@ -66,8 +66,15 @@
 							data-target=".bs-modal-sm" ng-hide="profile">LOGIN</a></li>
 						<li><a href="#/profile" ng-show="profile">PROFILE</a></li>
 						<li><a href="#/logout" ng-click="logout()" ng-show="profile">LOG OUT</a></li>
-						<li><a href="http://net4.ccs.neu.edu/home/pankajt/">ABOUT
-								ME</a></li>
+						<li class="dropdown"><a href="" class="dropdown-toggle"
+							data-toggle="dropdown" role="button" aria-expanded="false">ABOUT ME
+								<span class="caret"></span>
+						    </a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="https://www.facebook.com/pankajtripathi.k" target="_blank">FACEBOOK</a></li>
+ 							    <li><a href="https://www.linkedin.com/pub/pankaj-tripathi/96/897/122/" target="_blank">LINKEDIN</a></li>
+ 							    <li><a href="https://github.com/pankajtripathi/CS5610-project-movietime" target="_blank">GITHUB</a></li>
+							</ul></li>
 						<li><a href="#/contact">CONTACT</a></li>
 					</ul>
 				</div>
