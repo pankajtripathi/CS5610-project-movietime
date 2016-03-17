@@ -1,3 +1,3 @@
-The OpenShift `nodejs` cartridge documentation can be found at:
+Movie Portal implemented in MongoDB, ExpressJS, AngularJS, NodeJS and Rotten Tomatoes API
 
-http://openshift.github.io/documentation/oo_cartridge_guide.html#nodejs
+http://myproject-pankajt.rhcloud.com/#/home
